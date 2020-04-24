@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src = "https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/jso/dist/jso.js"></script>
+
+    <title>Project Page</title>
+</head>
+<body>
+     <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">CDS Business Health</a>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp">Main Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/ProjectView">Project Overviews <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/finance/finance.html">Finance<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/Timeline/timeline.html">Project Timeline<span class="sr-only">(current)</span></a>
+              </li>
+              </ul>
+              
+            </div>
+          </nav>
+     </div>   
+       <div class="container">
+           <!-- Modal Task for tasks -->
+            <div class="modal fade" id="myModal" role="dialog">
+                 <div class="modal-dialog ">
+                 <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                             <h4 class="modal-title text-left">ToDoSets Progress</h4>
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                             
+                        </div>
+                         <div class="modal-body">
+                            <table class="table table-bordered" id="task">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">ToDoSet ID</th>
+                                    <th scope="col">Completed</th>
+                                    <th scope="col">Completion Ratio</th>
+                                    <th scope="col">Number of ToDoLists</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                  
+                                 
+                                </tbody>
+                           </table>
+                             
+                         </div>
+                         <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                  </div>
+          </div>
+
+          <!-- Modal Task for member -->
+          <div class="modal fade" id="myModal2" role="dialog">
+              <div class="modal-dialog modal-lg">
+              <!-- Modal content-->
+                 <div class="modal-content bg-success">
+                     <div class="modal-header">
+                          <h4 class="modal-title text-left">Project Members</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          
+                     </div>
+                      <div class="modal-body">
+                         <table class="table table-bordered" id="member">
+                             <thead>
+                               <tr>
+                                 <th scope="col" class="text-center mb-2">Employee ID</th>
+                                 <th scope="col" class="text-center ">Employee Name</th>
+                                 <th scope="col" class="text-center mb-2">Email Address</th>
+                                 <th scope="col" class="text-center mb-2">Personable Type</th>
+                                 <th scope="col" class="text-center mb-4">Title</th>
+                               </tr>
+                             </thead>
+                             <tbody id="mbody">
+                               
+                              
+                             </tbody>
+                        </table>
+                          
+                      </div>
+                      <div class="modal-footer">
+                         <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                     </div>
+                 </div>
+               </div>
+       </div>
+          <div class="row">
+           <table class="table table-bordered" id="project">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">Index</th>
+                    <th scope="col" class="text-center">Title</th>
+                    <th scope="col" class="text-center">Members</th>
+                    <th scope="col" class="text-center">Status</th>
+                    <th scope="col" class="text-center">Priority</th>
+                  </tr>
+                </thead>
+                <tbody id="pbody">
+                  
+                 
+                </tbody>
+           </table>
+        </div>  
+      </div>   
+
+    <script src="project.js">
+    </script>
+    
+</body>
+</html>

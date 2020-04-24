@@ -1,0 +1,169 @@
+hr{
+  margin:8px;
+}
+.container{
+  max-width: 1472px!important;
+}
+
+.bg-light {
+  background-color: #306aa0!important;
+  box-shadow: 4px 0px 4px 0.05px rgba(0,0,0,0.75);
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+  font-style: italic;
+}
+
+
+svg{
+  width: 100%;
+  height:100%;
+  margin-top: -16px;
+}
+
+.liquidFillGaugeText {
+    font-family: Helvetica;
+    font-weight: bold; 
+}
+
+
+
+
+body {
+      background-color: #f7f7f7;
+  }
+
+  
+  
+
+  
+.btn{
+  font-size:10px!important;
+}
+
+  
+  
+  .bullet { font: 10px sans-serif; }
+  .bullet .marker { stroke: #000; stroke-width: 2px; }
+  .bullet .tick line { stroke: #666; stroke-width: .5px; }
+  .bullet .range.s0 { fill: #eee; }
+  .bullet .range.s1 { fill: #ddd; }
+  .bullet .range.s2 { fill: #ccc; }
+  .bullet .measure.s0 { fill: lightsteelblue; }
+  .bullet .measure.s1 { fill: steelblue; }
+  .bullet .title { font-size: 14px; font-weight: bold; }
+  .bullet .subtitle { fill: #999; }
+
+  
+
+  .main-area{
+    align-content: center;
+  }
+
+  .bullet-png {
+    width: 100%;
+    height: 70%;
+    margin-top: 5%;
+}
+  *{
+font-family: Arial, Helvetica, sans-serif;
+  }
+  h1{
+    font-size: 20px;
+    
+  }
+  
+  .card{
+    height: 250px;
+    margin: 11px;
+    box-shadow: 4px 4px 10px -10px rgba(0,0,0,0.75);
+  }
+
+  .rCol {
+    height: 98.5%;
+}
+
+  .rColPng{
+    height: 100%;
+    width: 100%;
+  }
+
+  .threeRows{
+    padding:10px;
+    margin-bottom: 47%;
+
+  }
+
+  circle{
+    align-content: center;
+  }
+
+  .allCol{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .rightCol{
+    margin: 0%;
+    margin-bottom: -20px;
+  }
+
+  .pinnedData{
+    /*
+    border:2px solid rgb(226, 226, 226);
+    box-shadow: 2px 2px 10px -5px rgba(0,0,0,0.75);
+    */
+    padding:5px;
+    
+  }
+  .tableHead{
+    padding:4px!important;
+  }
+
+  canvas{
+    width: 100%!important;
+    height: 100%!important;
+    border: none!important;
+  }
+
+  .bottomRow {
+    height: 100%;
+}
+
+@media only screen and (max-width: 575px){
+  .rCol {
+    height: 95%;
+    margin-top: 37px;
+}
+}
+h5{
+  font-size:15px;
+}
+.row1, .row2, .row3{
+
+}
+.left-col1, .left-col2, .left-col3, .left-col4, .left-col5, .left-col6{
+border:2px solid rgb(231, 231, 231);
+text-align:center;
+}
+.right-col1, .right-col2, .right-col3, .right-col4, .right-col5, .right-col6{
+  border:2px solid rgb(231, 231, 231);
+  text-align:center;
+
+  }
+
+.right-col2, .right-col3{
+
+    color:white;
+    background-color: rgb(223, 123, 123);
+    }
+
+    .right-col4, .right-col5,.right-col6{
+
+      color:white;
+      background-color: rgb(97, 211, 97)
+      }
+.card-body{
+  line-height:10px;
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="financeStyle.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+        
+
+
+    <div class="row headerRow header">
+        
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">CDS Business Health</a>
+              
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp">Main Dashboard <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/ProjectView">Project Overviews <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/finance/finance.html">Finance<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://jonathynlee.github.io/CDSBusinessHealthApp/Timeline/timeline.html">Project Timeline<span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </nav>
+         </div>   
+    </div>
+
+    <div class="row contentRow contentRow1">
+        <div class="col-md-4 bootCol">
+            <div class = "contentCol contentCol1">
+                    <canvas id="barChart" height="#" width="#" style="border: solid"> </canvas>
+                    
+            </div>
+            
+
+        </div>
+        <div class="col-md-4 bootCol ">
+               
+            <div class = "contentCol contentCol2">
+                    <canvas id="doughnutChart" height="#" width="#" style="border: solid"> </canvas>
+                </div>
+
+        </div>
+        <div class="col-md-4 bootCol ">
+                <div class = "contentCol contentCol3">
+                        <h1 class="bankHead">Bank Accounts</h1>
+                        <div class="bank check"><div>Checking:</div></div>
+                        <div class="bank save"><div>Savings:</div></div>
+
+                    </div>
+                    
+
+        </div>
+    </div>
+    <div class="row contentRow contentRow2">
+        <div class="col-md-4 bootCol ">
+            <div class = "contentCol contentCol4">
+                    <canvas id="profitAndLossChart" height="200px" width="400" style="border: solid"> </canvas>
+            </div>
+
+        </div>
+        <div class="col-md-4 bootCol ">
+            <!-- Diagram 5-->
+            <div class = "contentCol contentCol5">
+                    <canvas id="salesChart" height="200px" width="400" style="border: solid"> </canvas>
+                </div>
+
+        </div>
+        <div class="col-md-4  bootCol">
+                <div class = "contentCol contentCol6">
+                        <h1 class="tipsHead">Tips</h1>
+                    </div>
+            <!-- Diagram 6-->
+
+        </div>
+    </div>
+    <div class="row footerRow">
+    <div class = "footer">
+
+    </div>    
+    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src = "financeScript.js"></script>
+        
+    <script>
+    
+//~Directions to determine Data input~
+//
+
+//INVOICE BAR CHART
+
+
+var barChart = document.getElementById("barChart");
+
+console.log(barChart);
+
+
+
+
+var myBarChart = new Chart(barChart, {
+    type: 'horizontalBar',
+    data: {
+        labels:["Project 1", "Project 2", "Project 3"],
+        datasets: [
+            {
+              label: "",
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: ["#b0cce8", "#629bd0", "#306AA0"],
+              borderColor: "rgba(75,192,192,0.3)",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pontBorderColor: "rgba(75,192,192,1)",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(75,192,192,1)",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              //ADD DATA HERE//////////////////////////////////////////////////////////
+              data: [20, 25, 45]
+            }
+          ]
+    }
+});
+
+
+//EXPENSES DOUGHNUT CHART
+
+var doughnutChart = document.getElementById("doughnutChart");
+
+console.log(doughnutChart);
+
+var myDoughnutChart = new Chart(doughnutChart, {
+    type: 'doughnut',
+    data: {
+        labels:["Project 1", "Project 2", "Project 3"],
+        datasets: [
+            {
+              label: "Project 1",
+              fill: true,
+              lineTension: 0.1,
+              //Change arc background Color
+              backgroundColor: ["#b0cce8", "#629bd0", "#306AA0"],
+              borderColor: "rgba(75,192,192,0.3)",
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pontBorderColor: "rgba(75,192,192,1)",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(75,192,192,1)",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              //ADD DATA HERE//////////////////////////////////////////////////////////
+              data: [20, 25, 45]
+            },
+            
+          ]
+    }
+});
+
+
+//PROFIT AND LOSS CHART
+
+var pnlChart = document.getElementById("profitAndLossChart");
+
+console.log(pnlChart);
+
+var profAndLosChart = new Chart(pnlChart, {
+  type: 'line',
+  data: {
+    labels:["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    datasets: [
+      {
+        label: "CDS Data Set",
+        fill: false,
+        lineTension: 0.01,
+        backgroundColor: "#306AA0",
+        //LINE COLOR
+        borderColor: "#306AA0",
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pontBorderColor: "blue",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        pointHoverBorderColor: "rgba(220,220,220,1)",
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        //ADD DATA HERE//////////////////////////////////////////////////////////
+        data: [20, 25, 45, 35, 40, 55, 43, 52, 38, 50, 48, 57]
+      },
+      {
+        label: "CDS Data Set Two",
+        fill: false,
+        lineTension: 0.01,
+        backgroundColor: "#629bd0",
+        //LINE COLOR
+        borderColor: "#629bd0",
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pontBorderColor: "red",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        pointHoverBorderColor: "rgba(220,220,220,1)",
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        //ADD DATA HERE//////////////////////////////////////////////////////////
+        data: [40, 65, 35, 25, 50, 75, 33, 42, 78, 40, 58, 77]
+      }
+      
+    ]
+  }
+});
+
+
+//SALES CHART
+
+
+var salesChart = document.getElementById("salesChart");
+
+console.log(salesChart);
+
+var newSalesChart = new Chart(salesChart, {
+  type: 'line',
+  data: {
+    labels:["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    datasets: [
+      {
+        label: "CDS Data Set",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: "#629bd0",
+        //LINE COLOR
+        borderColor: "#629bd0",
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pontBorderColor: "rgba(75,192,192,1)",
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        pointHoverBorderColor: "rgba(220,220,220,1)",
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        //ADD DATA HERE//////////////////////////////////////////////////////////
+        data: [30, 45, 40, 35, 45, 55, 53, 42, 58, 40, 38, 47]
+      }
+      
+    ]
+  }
+});
+
+
+//BANK ACCOUNTS
+
+var checkingDiv = $("<div>");
+var savingsDiv = $("<div>");
+
+var checkEl = $(".check");
+var savingEl = $(".save");
+
+//ADD DATA HERE//////////////////////////////////////////////////////////
+checkingDiv.text("");
+savingsDiv.text("");
+
+checkEl.append(checkingDiv);
+savingEl.append(savingsDiv);
+
+
+    
+    
+    </script>
+
+</body>
+
+</html>

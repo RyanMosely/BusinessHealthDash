@@ -1,0 +1,67 @@
+h1{
+    font-size: 25px!important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin:0px;
+    padding:0px;
+    background-color: #f7f7f7;
+}
+.headerRow{
+    height:auto;
+    margin:0px;
+    margin-bottom:20px;
+    width:100%;
+}
+.headerCol{
+width:100%;
+}
+
+.contentRow{
+margin-top:0px;
+padding:0px 20px;
+}
+.contentCol{
+height: 100%;
+border: 2px solid rgb(218, 218, 218);
+box-shadow: 2px 2px 5px rgb(201, 200, 200);
+margin:5px;
+padding: 10px;
+background-color:white;
+}
+.bootCol{
+    padding:5px;
+}
+
+.bg-light {
+    background-color: #306AA0!important;
+    box-shadow: 4px 0px 4px 0.05px rgba(0,0,0,0.75);
+    width:100%;
+    
+  
+    margin:0px;
+  }
+  .navbar-light .navbar-brand {
+    color: white;
+    font-style: italic;
+  }
+
+  canvas{
+    border: none!important;
+    display: block;
+    height: 100%!important;
+    width: 100%!important;
+}
+
+.bank{
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bankHead{
+    font-style: italic;
+}
+
+.tipsHead{
+    font-style:italic;
+}
